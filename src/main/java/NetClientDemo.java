@@ -20,7 +20,7 @@ public class NetClientDemo extends AbstractVerticle {
 
         //创建连接到指定主机和端口的客户端，并绑定创建结果的处理器
         NetClient netClient3 = vertx.createNetClient(new NetClientOptions().setConnectTimeout(10000))
-                .connect(9984, "weixin.frontjs.top", res -> {
+                .connect(9984, "127.0.0.1", res -> {
                     if (res.succeeded()) {
                         System.out.println("连接成功!");
                         NetSocket socket = res.result();
