@@ -34,10 +34,11 @@ public class NetServerDemo extends AbstractVerticle {
             netSocket.closeHandler(ar -> {
                 System.out.println("客户端退出连接");
             });
-        }).listen(9984, "0:0:0:0", res -> {
+        }).listen(9984, "weixin.frontjs.top", res -> {
             if (res.succeeded()) {
                 System.out.println("Tcp服务端启动成功");
             } else {
+                System.out.println(res.cause().getMessage());
                 System.err.println("Tcp服务端启动失败");
             }
         });
