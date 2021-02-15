@@ -17,7 +17,7 @@ public class NetServerDemo extends AbstractVerticle {
 
         //绑定处理器，当有请求进入时触发
         NetServer netServer = vertx.createNetServer().connectHandler(netSocket -> {
-            System.out.println(netSocket.remoteAddress().host());
+            System.out.println(netSocket.remoteAddress().host() + ":" + netSocket.remoteAddress().port());
             //得到NetSocket实例
             netSocket.handler(buffer -> {
                 //读取数据
