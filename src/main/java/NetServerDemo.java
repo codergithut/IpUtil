@@ -34,7 +34,7 @@ public class NetServerDemo extends AbstractVerticle {
             netSocket.closeHandler(ar -> {
                 System.out.println("客户端退出连接");
             });
-        }).listen(9984, "localhost", res -> {
+        }).listen(9984, "0:0:0:0", res -> {
             if (res.succeeded()) {
                 System.out.println("Tcp服务端启动成功");
             } else {
